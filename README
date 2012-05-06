@@ -1,0 +1,20 @@
+# Ham Test Prep
+# Description: An Amateur (HAM) Radio test preparation program writen in Python
+# 
+# Ray @ truedays.org
+# GitHub: 
+# www: trudays.org/hamtestprep/
+#
+# License: GPL <http://www.gnu.org/licenses/gpl.txt>
+#
+# Version 0.01 May 6, 2012 
+#
+# IMPORTANT: This script relies on a text file provided by
+# http://www.ncvec.org/page.php?id=349 specifically
+# http://www.ncvec.org/downloads/Revised%20Element%202.txt
+# Please download your own copy. I'm not sure I have the right
+# to redistribute.
+#
+# Test question exclusions: At this time no graphical/schematic test questions
+# will be included. 
+# 
