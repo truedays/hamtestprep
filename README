@@ -2,8 +2,8 @@
 # Description: An Amateur (HAM) Radio test preparation program writen in Python
 # 
 # Ray @ truedays.org
-# GitHub: 
-# www: trudays.org/hamtestprep/
+# GitHub: https://github.com/truedays/hamtestprep
+# www: truedays.org/hamtestprep/
 #
 # License: GPL <http://www.gnu.org/licenses/gpl.txt>
 #
@@ -17,4 +17,5 @@
 #
 # Test question exclusions: At this time no graphical/schematic test questions
 # will be included. 
-# 
+#
+# dos2unix -n -7 Revised\ Element\ 2.txt dos2unix.out 
