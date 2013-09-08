@@ -30,3 +30,5 @@ for n in range(0,2816):
 
 #import re
 #re.findall(r'\AT[1-9][A-Z][0-9][0-9]',file[22])
+# qanswerkey[qnum:] = re.sub(r'.*\(|\).*','',[file[n-6]])
+
