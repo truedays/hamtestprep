@@ -1,51 +1,33 @@
-#!/usr/bin/python3
+#!/usr/bin/python2.7
 #
-# Ham Test Prep
-# Ray @ truedays.org
-# https://github.com/truedays/hamtestprep
-# http://truedays.org/hamtestprep
-#
+# this will be a complete rewrite of hamtestprep in pythion 2.x
 
-# Check if file exist
-# todo
 import re
-#qregexp = re.compile(r"T1A01 (D) [97.3(a)(4)]")
-##qregexp = re.compile(r"T[0-9][A-F][0-9][0-9]\ ?.*)
-# Open test pool file as f
-f = open("dos2unix.out", 'r')
-qnum = 0
-questionid = ["", "", ""]
-answer = ["", "", "", ""]
-questions = ["","","",""]
-#
-#while f.readline() not "~ End of Syllabus"
-#print("ray")
-#f.readline()
-
-#for line in f:
-#	print(line, end='')
-	
-# put file in list variable
+f = open('dos2unix.out', 'r')
 file = f.readlines()
-for n in range(0,7000):
-#    x = file[n].split("(",1)
-#    print(x)a
-    if file[n] == "~~\n":
-        #print(file[n-6][0:6])
-        
-        questionid[qnum] = [file[n-6][0:5]]
-        answer[qnum] = [file[n-6][7:8]]
-        questions[qnum] = file[n-5] + file[n-4] + file[n-3] + file[n-2] + file[n-1] 
-        qnum = qnum + 1
-##   Question ID/line number  | Question | Answer
-#if n == "~~" then:"
-    print(n,end=' ')
-    print(file[n],end='')
+questionid = ["",]
+answerkey= ["",]
+qnum = 0
 
-#print ("question id is {0}".format(question[0]))
-print ("_____________________________")
-print (questionid[0])
-print (answer[0])
-if questionid[0] == ['T1A01']:
-	print ("it doesn't care about the stupid square bracketrs")
-print (questions[0])
+for n in range(0,100):
+#for n in range(0,2816):
+  if file[n] == "~~\n":
+    questionid[qnum:] = [file[n-6][0:5]]
+    #answerkey[qnum:] = [re.sub(r'.*\(|\).*','',file[n-6],0)]
+    answerkey[qnum:] = file[n-6][file[n-6].find("(")+1]
+    #re.sub(r'.*\(|\).*','',[file[n-5]])
+    if questionid[qnum] == '\n':
+        questionid[qnum:] = [file[n-5][0:5]]
+        #answerkey[qnum:] = [re.sub(r'.*\(|\).*','',file[n-5])]
+        answerkey[qnum:] = file[n-5][file[n-5].find("(")+1]
+# TODO: add QuestionCount, so I know how many questions to extract 
+    qnum += 1
+    print questionid[qnum -1]
+    print questionid[qnum -1:]
+    print answerkey[qnum -1]
+print questionid[6]
+print questionid
+questionid[len(questionid):] = ["thisworks"]
+print questionid
+#import re
+#re.findall(r'\AT[1-9][A-Z][0-9][0-9]',file[22])
