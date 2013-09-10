@@ -5,20 +5,17 @@
 import re
 f = open('dos2unix.out', 'r')
 file = f.readlines()
-questionid = ["",]
-answerkey= ["",]
+questionid = []
+answerkey= []
 qnum = 0
 
 for n in range(0,100):
 #for n in range(0,2816):
   if file[n] == "~~\n":
     questionid[qnum:] = [file[n-6][0:5]]
-    #answerkey[qnum:] = [re.sub(r'.*\(|\).*','',file[n-6],0)]
     answerkey[qnum:] = file[n-6][file[n-6].find("(")+1]
-    #re.sub(r'.*\(|\).*','',[file[n-5]])
     if questionid[qnum] == '\n':
         questionid[qnum:] = [file[n-5][0:5]]
-        #answerkey[qnum:] = [re.sub(r'.*\(|\).*','',file[n-5])]
         answerkey[qnum:] = file[n-5][file[n-5].find("(")+1]
 # TODO: add QuestionCount, so I know how many questions to extract 
     qnum += 1
