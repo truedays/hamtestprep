@@ -3,6 +3,7 @@
 # this will be a complete rewrite of hamtestprep in pythion 2.x
 
 from random import randint
+from sys import argv
 
 f = open('dos2unix.out', 'r')
 file = f.readlines()
@@ -24,8 +25,20 @@ for n in range(0,2816):
     #print question[qnum]
     qnum += 1
 
-# for Q in range(qnum)
-Q = randint(0,qnum)
-print question[Q][2],
-for n in question[Q][3]:
-  print n,
+
+
+for x in range(int(argv[1])):
+  print x
+  print argv[1]
+  Q = randint(0,qnum)
+  print question[Q][2],
+  for n in question[Q][3]:
+    print n,
+  guess = raw_input("Answer? ")
+  print guess.upper()
+  print question[Q][1]
+  if guess.upper() == question[Q][1]:
+    print "Correct!" 
+    continue
+  else: 
+    print "Wrong!"
