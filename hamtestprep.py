@@ -14,10 +14,12 @@ for n in range(0,100):
       question.append([file[n-5][0:5]])
       question[qnum].append(file[n-5][7:8])
       question[qnum].append(file[n-4])
+      question[qnum].append([file[n-3], file[n-2], file[n-1]])
     else:
       question.append([file[n-6][0:5]])
       question[qnum].append(file[n-6][7:8])
       question[qnum].append(file[n-5])
+      question[qnum].append([file[n-4], file[n-3], file[n-2], file[n-1]])
     print question[qnum]
     qnum += 1
 print ""
