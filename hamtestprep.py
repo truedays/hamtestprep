@@ -3,7 +3,14 @@
 # this will be a complete rewrite of hamtestprep in pythion 2.x
 
 from random import randint
-from sys import argv
+from sys import argv, exit
+
+print "len:", + len(argv)
+if len(argv) != 2:
+  print "Expected a numeric value. Try running:",
+  print argv[0],
+  print "2"
+  exit(1)
 
 f = open('dos2unix.out', 'r')
 file = f.readlines()
