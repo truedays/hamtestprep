@@ -26,6 +26,6 @@ for n in range(0,2816):
 
 # for Q in range(qnum)
 Q = randint(0,qnum)
-print question[0][2],
-for n in question[0][3]:
+print question[Q][2],
+for n in question[Q][3]:
   print n,
