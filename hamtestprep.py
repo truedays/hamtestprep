@@ -2,6 +2,8 @@
 #
 # this will be a complete rewrite of hamtestprep in pythion 2.x
 
+from random import randint
+
 f = open('dos2unix.out', 'r')
 file = f.readlines()
 question = []
@@ -23,6 +25,7 @@ for n in range(0,2816):
     qnum += 1
 
 # for Q in range(qnum)
+Q = randint(0,qnum)
 print question[0][2],
 for n in question[0][3]:
   print n,
