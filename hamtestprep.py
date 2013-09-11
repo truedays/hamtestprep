@@ -13,9 +13,11 @@ for n in range(0,100):
     if file[n-6][0:5] == '\n':
       question.append([file[n-5][0:5]])
       question[qnum].append(file[n-5][7:8])
+      question[qnum].append(file[n-4])
     else:
       question.append([file[n-6][0:5]])
       question[qnum].append(file[n-6][7:8])
+      question[qnum].append(file[n-5])
     print question[qnum]
     qnum += 1
 print ""
