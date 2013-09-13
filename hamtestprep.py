@@ -4,8 +4,9 @@
 
 from random import randint
 from sys import argv, exit
+from time import sleep
 
-print "len:", + len(argv)
+#print "len:", + len(argv)
 if len(argv) != 2:
   print "Expected a numeric value. Try running:",
   print argv[0],
@@ -35,17 +36,20 @@ for n in range(0,2816):
 
 
 for x in range(int(argv[1])):
-  print x
-  print argv[1]
+#  print x
+#  print argv[1]
   Q = randint(0,qnum)
+  print
   print question[Q][2],
   for n in question[Q][3]:
     print n,
   guess = raw_input("Answer? ")
-  print guess.upper()
-  print question[Q][1]
-  if guess.upper() == question[Q][1]:
-    print "Correct!" 
+#  print guess.upper()
+#  print question[Q][1]
+  if guess[0].upper() == question[Q][1]:
+    print "Correct!"
+    sleep(.5)
     continue
   else: 
     print "Wrong!"
+    sleep(1)
