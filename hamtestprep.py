@@ -4,6 +4,10 @@
 # Ray at truedays.org
 # https://github.com/truedays/hamtestprep
 # 
+# todo: http/cgi, generate real tests with proper number of questions per 
+#  section, prevent repeat "known" questions from cram mode. add multi-test 
+#  modes: 1) exam 2) cramsession 3) section cram. toggle display answer after 
+#  incorrect guesses
 
 from random import randint
 from sys import argv, exit
@@ -59,15 +63,10 @@ for x in range(int(argv[1])):
     print "Wrong!"
     sleep(1)
 
-#final = correctans/int(argv[1]).0
-#print final
-#print "ok"
-#print int(correctans)
-#print int(argv[1])
 final = round(float(correctans)/float(argv[1]),2)
 print
 print "you scored: {0:.2f}%".format(final*100)
-print "You had %d out of %d correct" % (int(correctans), int(argv[1]))
+print "You had %d out of %d correct" % (correctans, argv[1])
 print 
 #if final == 1.0:
 #  print "You got 100%!"
