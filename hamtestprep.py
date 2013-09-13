@@ -17,6 +17,7 @@ f = open('dos2unix.out', 'r')
 file = f.readlines()
 question = []
 qnum = 0
+correctans = 0
 
 for n in range(0,2816):
   if file[n] == "~~\n":
@@ -44,12 +45,24 @@ for x in range(int(argv[1])):
   for n in question[Q][3]:
     print n,
   guess = raw_input("Answer? ")
-#  print guess.upper()
+  print guess.upper()
 #  print question[Q][1]
   if guess[0].upper() == question[Q][1]:
     print "Correct!"
+    correctans += 1
     sleep(.5)
     continue
   else: 
     print "Wrong!"
     sleep(1)
+
+#final = correctans/int(argv[1]).0
+#print final
+#print "ok"
+#print int(correctans)
+#print int(argv[1])
+final = round(float(correctans)/float(argv[1]),2)
+if final == 1.0:
+  print "You got 100%!"
+else:
+  print "You scored: ", final
