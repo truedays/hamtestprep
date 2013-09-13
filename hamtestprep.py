@@ -1,6 +1,9 @@
 #!/usr/bin/python2.7
 #
-# this will be a complete rewrite of hamtestprep in pythion 2.x
+# Ham(radio)TestPrep 
+# Ray at truedays.org
+# https://github.com/truedays/hamtestprep
+# 
 
 from random import randint
 from sys import argv, exit
@@ -62,7 +65,11 @@ for x in range(int(argv[1])):
 #print int(correctans)
 #print int(argv[1])
 final = round(float(correctans)/float(argv[1]),2)
-if final == 1.0:
-  print "You got 100%!"
-else:
-  print "You scored: ", final
+print
+print "you scored: {0:.2f}%".format(final*100)
+print "You had %d out of %d correct" % (int(correctans), int(argv[1]))
+print 
+#if final == 1.0:
+#  print "You got 100%!"
+#else:
+#  print "You scored: ", final
