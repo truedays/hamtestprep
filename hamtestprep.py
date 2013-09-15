@@ -1,12 +1,12 @@
 #!/usr/bin/python2.7
 #
-# Ham(radio)TestPrep 
+# Ham(radio)TestPrep
 # Ray at truedays.org
 # https://github.com/truedays/hamtestprep
-# 
-# todo: http/cgi, generate real tests with proper number of questions per 
-#  section, prevent repeat "known" questions from cram mode. add multi-test 
-#  modes: 1) exam 2) cramsession 3) section cram. toggle display answer after 
+#
+# todo: http/cgi, generate real tests with proper number of questions per
+#  section, prevent repeat "known" questions from cram mode. add multi-test
+#  modes: 1) exam 2) cramsession 3) section cram. toggle display answer after
 #  incorrect guesses
 
 from random import randint
@@ -55,24 +55,28 @@ for x in range(int(argv[1])):
   print question[Q][2],
   for n in question[Q][3]:
     print n,
-  guess = raw_input("Answer? ")
-  #print guess.upper()
+  guess = ''
+  while len(guess) != 1:
+    while (guess != 'A') and (guess != 'B') and (guess != 'C') and (guess != 'D'):
+      guess = raw_input("Answer? ").upper()
 #  print question[Q][1]
-  if guess[0].upper() == question[Q][1]:
+  if guess == question[Q][1]:
     print "Correct!"
     correctans += 1
     sleep(.5)
     continue
-  else: 
+  else:
     print "Wrong!"
+    #for n in "ABCD"
+    for n in range(0,4):
+      #print question[Q][1]+". " + " " + question [Q][3][n]
+      if question[Q][1]+". " in question[Q][3][n]:
+        print question[Q][3][n]
+        break
     sleep(1)
 
 final = round(float(correctans)/float(argv[1]),2)
 print
 print "you scored: {0:.2f}%".format(final*100)
 print "You had %d out of %d correct" % (correctans, int(argv[1]))
-print 
-#if final == 1.0:
-#  print "You got 100%!"
-#else:
-#  print "You scored: ", final
+print
