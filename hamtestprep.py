@@ -52,7 +52,8 @@ for x in range(int(argv[1])):
     print question[Q][0]
     Q = randint(0,qnum)
   print
-  print question[Q][2],
+  print "  " + "#"+str(x+1) + " of " + argv[1] + "  [" + question[Q][0] + "]\t\t++debug++"
+  print "  " + question[Q][2],
   for n in question[Q][3]:
     print n,
   guess = ''
