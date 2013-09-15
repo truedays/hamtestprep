@@ -47,12 +47,16 @@ for x in range(int(argv[1])):
 #  print x
 #  print argv[1]
   Q = randint(0,qnum)
+  while "igure" in question[Q][2]:
+    print "Skipping schematic based question",
+    print question[Q][0]
+    Q = randint(0,qnum)
   print
   print question[Q][2],
   for n in question[Q][3]:
     print n,
   guess = raw_input("Answer? ")
-  print guess.upper()
+  #print guess.upper()
 #  print question[Q][1]
   if guess[0].upper() == question[Q][1]:
     print "Correct!"
