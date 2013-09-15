@@ -66,7 +66,7 @@ for x in range(int(argv[1])):
 final = round(float(correctans)/float(argv[1]),2)
 print
 print "you scored: {0:.2f}%".format(final*100)
-print "You had %d out of %d correct" % (correctans, argv[1])
+print "You had %d out of %d correct" % (correctans, int(argv[1]))
 print 
 #if final == 1.0:
 #  print "You got 100%!"
