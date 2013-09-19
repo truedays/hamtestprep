@@ -48,19 +48,21 @@ section = {'T1A':[], 'T1B':[], 'T1C':[], 'T1D':[], 'T1E':[], 'T1F':[], 'T2A':[],
 for x in range(0, qnum):
   if question[x][0][0:3] == "Del": # Skip if Deleted
     continue
-  section[question[x][0][0:3]].append([x])
+  section[question[x][0][0:3]].append(x)
 
 # main exam loop. Randomize section-questions to mimic a real exam
 for x in sorted(section.keys()):
   if section[x] == []:
-    print "Empty set. Skipping..."
+   # print "Empty set. Skipping..."
     continue
-  Q = randint(0,len(section[x])-1)
-  print x
-  print "L ==== " +str(len(section[x])-1)
-  print "Q ==== " + str(Q)
+  Q = section[x][randint(0,len(section[x])-1)]
   #print x
-  print section[x]
+  #print "L ==== " +str(len(section[x])-1)
+  #print "Q ==== " + str(Q)
+  #print x
+  #print section[x]
+  print question[Q]
+
   sleep(.5)
 
 #old fully random question loop
