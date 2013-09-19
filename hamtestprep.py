@@ -53,11 +53,15 @@ for x in range(0, qnum):
 # main exam loop. Randomize section-questions to mimic a real exam
 for x in sorted(section.keys()):
   if section[x] == []:
-#    print "Empty set. Skipping..."
+    print "Empty set. Skipping..."
     continue
+  Q = randint(0,len(section[x])-1)
   print x
+  print "L ==== " +str(len(section[x])-1)
+  print "Q ==== " + str(Q)
+  #print x
   print section[x]
-#  sleep(.5)
+  sleep(.5)
 
 #old fully random question loop
 for x in range(int(argv[1])):
