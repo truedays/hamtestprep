@@ -42,7 +42,17 @@ for n in range(0,len(file)):
     #print question[qnum]
     qnum += 1
 
-#for sectionQcounter in
+# section questioncounter
+sectn = 0
+section = {'T1A':[], 'T1B':[], 'T1C':[], 'T1D':[], 'T1E':[], 'T1F':[], 'T2A':[], 'T2B':[], 'T2C':[], 'T2D':[], 'T2E':[], 'T2F':[], 'T3A':[], 'T3B':[], 'T3C':[], 'T3D':[], 'T3E':[], 'T3F':[], 'T4A':[], 'T4B':[], 'T4C':[], 'T4D':[], 'T4E':[], 'T4F':[], 'T5A':[], 'T5B':[], 'T5C':[], 'T5D':[], 'T5E':[], 'T5F':[], 'T6A':[], 'T6B':[], 'T6C':[], 'T6D':[], 'T6E':[], 'T6F':[], 'T7A':[], 'T7B':[], 'T7C':[], 'T7D':[], 'T7E':[], 'T7F':[], 'T8A':[], 'T8B':[], 'T8C':[], 'T8D':[], 'T8E':[], 'T8F':[], 'T9A':[], 'T9B':[], 'T9C':[], 'T9D':[], 'T9E':[], 'T9F':[], 'T0A':[], 'T0B':[], 'T0C':[], 'T0D':[], 'T0E':[], 'T0F':[]}
+for x in section.keys():
+  if x in question[sectn][0]:
+    section[x].append(sectn)
+    sectn += 1
+  else:
+    continue
+for x in section.keys():
+  print "Section " + x + str(section[x])
 
 for x in range(int(argv[1])):
 #  print x
