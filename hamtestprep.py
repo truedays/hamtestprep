@@ -20,13 +20,14 @@ if len(argv) != 2:
   print "2"
   exit(1)
 
-f = open('dos2unix.out', 'r')
+f = open('Revised Element 2.txt', 'r')
 file = f.readlines()
 question = []
 qnum = 0
 correctans = 0
 
-for n in range(0,2816):
+#for n in range(0,2816):
+for n in range(0,len(file)):
   if file[n] == "~~\n":
     if file[n-6][0:5] == '\n':
       question.append([file[n-5][0:5]])
@@ -41,7 +42,7 @@ for n in range(0,2816):
     #print question[qnum]
     qnum += 1
 
-
+#for sectionQcounter in
 
 for x in range(int(argv[1])):
 #  print x
@@ -58,8 +59,11 @@ for x in range(int(argv[1])):
     print n,
   guess = ''
   while len(guess) != 1:
-    while (guess != 'A') and (guess != 'B') and (guess != 'C') and (guess != 'D'):
+    while (guess != 'A') and (guess != 'B') and (guess != 'C') and (guess != 'D') and (guess != 'X'):
       guess = raw_input("Answer? ").upper()
+  if guess == "X":
+    guess = input("debug: ")
+    print guess
 #  print question[Q][1]
   if guess == question[Q][1]:
     print "Correct!"
