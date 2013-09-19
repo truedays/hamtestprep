@@ -62,7 +62,29 @@ for x in sorted(section.keys()):
   #print x
   #print section[x]
   print question[Q]
-
+  while "igure" in question[Q][2]:
+    print "Skipping schematic based question",
+    print question[Q][0]
+    Q = section[x][randint(0,len(section[x])-1)]
+  print
+  print "  " + question[Q][2],
+  for n in question[Q][3]:
+    print n,
+  guess = ''
+  while len(guess) != 1:
+    while (guess != 'A') and (guess != 'B') and (guess != 'C') and (guess != 'D') and (guess != 'X'):
+      guess = raw_input("Answer? ").upper()
+    if guess == "X":
+      guess = input("debug: ")
+      print guess
+    #  print question[Q][1]
+    if guess == question[Q][1]:
+      print "Correct!"
+      correctans += 1
+      sleep(.5)
+      continue
+    else:
+      print "Wrong!"
   sleep(.5)
 
 #old fully random question loop
