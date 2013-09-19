@@ -61,7 +61,7 @@ for x in sorted(section.keys()):
   #print "Q ==== " + str(Q)
   #print x
   #print section[x]
-  print question[Q]
+  #print question[Q]
   while "igure" in question[Q][2]:
     print "Skipping schematic based question",
     print question[Q][0]
@@ -85,7 +85,13 @@ for x in sorted(section.keys()):
       continue
     else:
       print "Wrong!"
-  sleep(.5)
+    #for n in "ABCD"
+    for n in range(0,4):
+      #print question[Q][1]+". " + " " + question [Q][3][n]
+      if question[Q][1]+". " in question[Q][3][n]:
+        print question[Q][3][n]
+        break
+    sleep(1)
 
 #old fully random question loop
 for x in range(int(argv[1])):
