@@ -1858,7 +1858,7 @@ A. 0.003525 kHz
 B. 35.25 kHz
 C. 3525 kHz
 D. 3,525,000 kHz
-~~ 
+~~
 
 
 T5B08 (B)
@@ -1867,7 +1867,7 @@ A. 0.001 microfarads
 B. 1 microfarad
 C. 1000 microfarads
 D. 1,000,000,000 microfarads
-~~ 
+~~
 
 
 T5B09 (B)
@@ -2998,7 +2998,7 @@ A. Spread-spectrum
 B. Packet radio
 C. Single sideband
 D. Phase shift keying
-~~ 
+~~
 
 
 T8A02 (A)
@@ -3053,7 +3053,7 @@ A. SSB signals are easier to tune
 B. SSB signals are less susceptible to interference
 C. SSB signals have narrower bandwidth
 D. All of these choices are correct
-~~ 
+~~
 
 
 T8A08 (B)
@@ -3395,7 +3395,7 @@ A. A control code required for automatic position reporting
 B. A timing bit used to ensure equal sharing of a frequency
 C. An extra code element used to detect errors in received data
 D. A "triple width" bit used to signal the end of a character
-~~ 
+~~
 
 
 SUBELEMENT T9 – Antennas, feedlines - [2 Exam Questions - 2 Groups]
@@ -3698,7 +3698,7 @@ A. The battery could overheat and give off flammable gas or explode
 B. The voltage can become reversed
 C. The “memory effect” will reduce the capacity of the battery
 D. All of these choices are correct
-~~ 
+~~
 
 
 T0A11 (C)
