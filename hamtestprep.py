@@ -13,12 +13,12 @@ from random import randint
 from sys import argv, exit
 from time import sleep
 
-#print "len:", + len(argv)
-if len(argv) != 2:
-  print "Expected a numeric value. Try running:",
-  print argv[0],
-  print "2"
-  exit(1)
+##print "len:", + len(argv)
+#if len(argv) != 2:
+#  print "Expected a numeric value. Try running:",
+#  print argv[0],
+#  print "2"
+#  exit(1)
 
 f = open('Revised Element 2.txt', 'r')
 file = f.readlines()
@@ -51,6 +51,7 @@ for x in range(0, qnum):
   section[question[x][0][0:3]].append(x)
 
 # main exam loop. Randomize section-questions to mimic a real exam
+qcount = 0
 for x in sorted(section.keys()):
   if section[x] == []:
    # print "Empty set. Skipping..."
@@ -66,7 +67,8 @@ for x in sorted(section.keys()):
     print "Skipping schematic based question",
     print question[Q][0]
     Q = section[x][randint(0,len(section[x])-1)]
-  print
+  qcount += 1
+  print "  " + question[Q][0] + "  " + str(qcount) + "/35"
   print "  " + question[Q][2],
   for n in question[Q][3]:
     print n,
@@ -74,64 +76,75 @@ for x in sorted(section.keys()):
   while len(guess) != 1:
     while (guess != 'A') and (guess != 'B') and (guess != 'C') and (guess != 'D') and (guess != 'X'):
       guess = raw_input("Answer? ").upper()
+#      guess = 'A'
     if guess == "X":
       guess = input("debug: ")
       print guess
     #  print question[Q][1]
     if guess == question[Q][1]:
       print "Correct!"
+      print
       correctans += 1
       sleep(.5)
       continue
     else:
       print "Wrong!"
-    #for n in "ABCD"
+    #for n in "ABCD"  This loop looks for the right answer to display after user gets it wrong
     for n in range(0,4):
       #print question[Q][1]+". " + " " + question [Q][3][n]
       if question[Q][1]+". " in question[Q][3][n]:
         print question[Q][3][n]
         break
     sleep(1)
-
-#old fully random question loop
-for x in range(int(argv[1])):
-#  print x
-#  print argv[1]
-  Q = randint(0,qnum)
-  while "igure" in question[Q][2]:
-    print "Skipping schematic based question",
-    print question[Q][0]
-    Q = randint(0,qnum)
-  print
-  print "  " + "#"+str(x+1) + " of " + argv[1] + "  [" + question[Q][0] + "]\t\t++debug++"
-  print "  " + question[Q][2],
-  for n in question[Q][3]:
-    print n,
-  guess = ''
-  while len(guess) != 1:
-    while (guess != 'A') and (guess != 'B') and (guess != 'C') and (guess != 'D') and (guess != 'X'):
-      guess = raw_input("Answer? ").upper()
-  if guess == "X":
-    guess = input("debug: ")
-    print guess
-#  print question[Q][1]
-  if guess == question[Q][1]:
-    print "Correct!"
-    correctans += 1
-    sleep(.5)
-    continue
-  else:
-    print "Wrong!"
-    #for n in "ABCD"
-    for n in range(0,4):
-      #print question[Q][1]+". " + " " + question [Q][3][n]
-      if question[Q][1]+". " in question[Q][3][n]:
-        print question[Q][3][n]
-        break
-    sleep(1)
-
-final = round(float(correctans)/float(argv[1]),2)
+#final = round(float(correctans)/float(35,2))
+final = round(float(correctans)/35,2)
 print
 print "you scored: {0:.2f}%".format(final*100)
-print "You had %d out of %d correct" % (correctans, int(argv[1]))
+print "You had %d out of %d correct" % (correctans, 35)
+if correctans >= 26:
+  print "You Passed!!!"
+else:
+  print "Sorry, you needed to get at least 26 questions correct to be considered passing"
 print
+##old fully random question loop
+#for x in range(int(argv[1])):
+##  print x
+##  print argv[1]
+#  Q = randint(0,qnum)
+#  while "igure" in question[Q][2]:
+#    print "Skipping schematic based question",
+#    print question[Q][0]
+#    Q = randint(0,qnum)
+#  print
+#  print "  " + "#"+str(x+1) + " of " + argv[1] + "  [" + question[Q][0] + "]\t\t++debug++"
+#  print "  " + question[Q][2],
+#  for n in question[Q][3]:
+#    print n,
+#  guess = ''
+#  while len(guess) != 1:
+#    while (guess != 'A') and (guess != 'B') and (guess != 'C') and (guess != 'D') and (guess != 'X'):
+#      guess = raw_input("Answer? ").upper()
+#  if guess == "X":
+#    guess = input("debug: ")
+#    print guess
+##  print question[Q][1]
+#  if guess == question[Q][1]:
+#    print "Correct!"
+#    correctans += 1
+#    sleep(.5)
+#    continue
+#  else:
+#    print "Wrong!"
+#    #for n in "ABCD"
+#    for n in range(0,4):
+#      #print question[Q][1]+". " + " " + question [Q][3][n]
+#      if question[Q][1]+". " in question[Q][3][n]:
+#        print question[Q][3][n]
+#        break
+#    sleep(1)
+#
+#final = round(float(correctans)/float(argv[1]),2)
+#print
+#print "you scored: {0:.2f}%".format(final*100)
+#print "You had %d out of %d correct" % (correctans, int(argv[1]))
+#print
