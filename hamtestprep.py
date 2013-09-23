@@ -78,7 +78,9 @@ for x in sorted(section.keys()):
       guess = raw_input("Answer? ").upper()
 #      guess = 'A'
     if guess == "X":
-      guess = input("debug: ")
+      guess = 'z'
+      while guess != 'X'
+      guess = input("debug: ").upper()
       print guess
     #  print question[Q][1]
     if guess == question[Q][1]:
