@@ -9,9 +9,10 @@
 #  modes: 1) exam 2) cramsession 3) section cram. toggle display answer after
 #  incorrect guesses
 
-from random import randint
+from random import randint, seed
 from sys import argv, exit
 from time import sleep
+seed()
 
 ##print "len:", + len(argv)
 #if len(argv) != 2:
