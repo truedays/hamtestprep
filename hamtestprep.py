@@ -79,9 +79,9 @@ for x in sorted(section.keys()):
 #      guess = 'A'
     if guess == "X":
       guess = 'z'
-      while guess != 'X'
-      guess = input("debug: ").upper()
-      print guess
+      while guess != 'X':
+          guess = input("debug: ").upper()
+          print guess
     #  print question[Q][1]
     if guess == question[Q][1]:
       print "Correct!"
